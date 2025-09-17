@@ -22,6 +22,7 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -46,6 +47,24 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        earth: {
+          brown: "hsl(var(--earth-brown))",
+          terracotta: "hsl(var(--earth-terracotta))",
+          sand: "hsl(var(--earth-sand))",
+        },
+        nature: {
+          mint: "hsl(var(--nature-mint))",
+          sage: "hsl(var(--nature-sage))",
+          forest: "hsl(var(--nature-forest))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

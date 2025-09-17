@@ -2,41 +2,79 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* ReRoot Design System - Nature-inspired sustainability theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core backgrounds */
+    --background: 45 15% 97%;
+    --foreground: 140 25% 15%;
 
+    /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 140 25% 15%;
 
+    /* Popover system */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 140 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Deep Forest Green */
+    --primary: 140 45% 25%;
+    --primary-foreground: 45 15% 97%;
+    --primary-hover: 140 45% 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Sage Green */
+    --secondary: 125 20% 85%;
+    --secondary-foreground: 140 25% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Warm Neutral */
+    --muted: 45 10% 90%;
+    --muted-foreground: 140 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Golden Earth */
+    --accent: 45 75% 65%;
+    --accent-foreground: 140 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Earth tones */
+    --earth-brown: 25 35% 45%;
+    --earth-terracotta: 15 55% 55%;
+    --earth-sand: 45 25% 75%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Nature greens */
+    --nature-mint: 155 35% 75%;
+    --nature-sage: 125 25% 65%;
+    --nature-forest: 140 55% 20%;
 
-    --radius: 0.5rem;
+    /* Status colors */
+    --success: 140 50% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 85% 55%;
+    --warning-foreground: 140 25% 15%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI elements */
+    --border: 125 15% 85%;
+    --input: 125 15% 90%;
+    --ring: 140 45% 25%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--nature-sage)) 0%, hsl(var(--nature-mint)) 100%);
+    --gradient-earth: linear-gradient(45deg, hsl(var(--earth-sand)) 0%, hsl(var(--accent)) 100%);
+    --gradient-forest: linear-gradient(180deg, hsl(var(--nature-forest)) 0%, hsl(var(--primary)) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 4px 16px hsl(var(--primary) / 0.15);
+    --shadow-strong: 0 8px 32px hsl(var(--primary) / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 12px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -94,6 +132,7 @@ All colors MUST be HSL.
   }
 }
 
+/* Custom utility classes for ReRoot design system */
 @layer base {
   * {
     @apply border-border;
@@ -101,5 +140,77 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Hero gradients */
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+  
+  .gradient-forest {
+    background: var(--gradient-forest);
+  }
+
+  /* Custom shadows */
+  .shadow-nature-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-nature-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-nature-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  /* Animated elements */
+  .transition-nature {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  /* Floating animation for hero elements */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Counter animation */
+  .animate-counter {
+    animation: countUp 2s ease-out;
+  }
+  
+  @keyframes countUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Plant card hover effects */
+  .plant-card {
+    @apply transition-nature hover:shadow-nature-medium hover:-translate-y-1;
   }
 }
